@@ -16,13 +16,24 @@ webpackConfig = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        use: ['babel-loader','eslint-loader'],
+        exclude: ['/node_modules/']
+      },
+      {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader,'css-loader','postcss-loader']
       },
       {
-        test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: ['/node_modules/']
+        test: /\.(png|jpg|gif)$/,
+        use: {
+          loader: 'url-loader',//url-loader会调用file-loader,
+          outputPath:'/img',
+          publicPath:'cdn域名',
+          options:{
+            limit:8*1024 //转base64
+          }
+        }
       },
     ]
   },
