@@ -1,0 +1,17 @@
+.test{
+    --fontcolor: yellowgreen;
+    color: var(--fontcolor);
+}
+.testqqqq{
+    --fontcolor: yellowgreen;
+    color: var(--fontcolor);
+}
+.testq{
+    --fontcolor: yellowgreen;
+    color: var(--fontcolor);
+}
+.test1{
+    border-radius: 10px;
+    background-color: aquamarine;
+    transform: translate('200px');
+}
